@@ -18,4 +18,9 @@ router.get('/', function (req, res, next) {
   })
 })
 
+router.get('/clear', function (req, res, next) {
+  res.status(200).end()
+  logger.timing()
+})
+
 module.exports = router
