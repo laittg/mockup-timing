@@ -11,4 +11,11 @@ router.post('/', function (req, res, next) {
   logger.timing(msg)
 })
 
+router.get('/', function (req, res, next) {
+  res.download('timing.log', err => {
+    if (err) console.error(err)
+    res.status(404).end('File not found')
+  })
+})
+
 module.exports = router
